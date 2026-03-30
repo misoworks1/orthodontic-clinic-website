@@ -13,10 +13,10 @@
 }
 
 :root {
-  --primary: #0b8e9e;
-  --primary-dark: #076d7a;
-  --primary-light: #e8f6f8;
-  --accent: #0dc5c1;
+  --primary: #4aacc6;
+  --primary-dark: #3a8fa6;
+  --primary-light: #eaf5f8;
+  --accent: #89bfcd;
   --navy: #0a2e4d;
   --text: #222222;
   --text-light: #666666;
@@ -299,31 +299,40 @@ button {
 /* Logo */
 .logo {
   display: flex;
-  flex-direction: column;
-  line-height: 1.2;
+  align-items: center;
 }
 
-.logo-main {
-  font-size: 20px;
-  font-weight: 800;
-  color: var(--white);
-  transition: color var(--transition);
+.logo-img {
+  height: 32px;
+  width: auto;
+  filter: brightness(0) invert(1);
+  transition: filter var(--transition);
 }
 
-.logo-sub {
-  font-size: 11px;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.7);
-  letter-spacing: 0.5px;
-  transition: color var(--transition);
+.logo-img-dark {
+  display: none;
+  height: 32px;
+  width: auto;
 }
 
-.header.scrolled .logo-main {
-  color: var(--navy);
+.header.scrolled .logo-img {
+  display: none;
 }
 
-.header.scrolled .logo-sub {
-  color: var(--text-light);
+.header.scrolled .logo-img-dark {
+  display: block;
+}
+
+.mobile-nav-logo {
+  height: 28px;
+  width: auto;
+}
+
+.footer-logo {
+  height: 28px;
+  width: auto;
+  filter: brightness(0) invert(1);
+  opacity: 0.8;
 }
 
 /* Desktop Nav */
@@ -522,7 +531,7 @@ button {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(10, 46, 77, 0.85), rgba(11, 142, 158, 0.4));
+  background: linear-gradient(135deg, rgba(10, 46, 77, 0.85), rgba(74, 172, 198, 0.4));
   z-index: 1;
 }
 
@@ -733,6 +742,19 @@ button {
 
 .doctor-specialist-badge .material-symbols-outlined {
   font-size: 18px;
+}
+
+.mohw-mark {
+  flex-shrink: 0;
+}
+
+.mohw-badge-item {
+  border-color: var(--primary);
+  background: var(--primary-light);
+}
+
+.mohw-badge-icon {
+  flex-shrink: 0;
 }
 
 /* Credentials */
@@ -1150,16 +1172,6 @@ button {
   flex-direction: column;
   align-items: center;
   margin-bottom: 20px;
-}
-
-.footer-brand .logo-main {
-  font-size: 18px;
-  color: var(--white);
-}
-
-.footer-brand .logo-sub {
-  font-size: 11px;
-  color: rgba(255, 255, 255, 0.5);
 }
 
 .footer-info {

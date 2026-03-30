@@ -40,8 +40,8 @@ html {
 }
 
 body {
-  font-family: 'Pretendard GOV Variable', 'Pretendard Variable', Pretendard, -apple-system,
-    BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, sans-serif;
   font-size: 16px;
   line-height: 1.7;
   color: var(--text);
@@ -585,7 +585,7 @@ button {
 }
 
 .hero-cta:hover {
-  background: var(--primary-dark);
+  opacity: 0.9;
   transform: translateY(-2px);
 }
 
@@ -1282,9 +1282,6 @@ button {
   background: var(--white);
   border-top: 1px solid var(--border);
   box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.06);
-}
-
-.quick-menu-mobile {
   grid-template-columns: repeat(4, 1fr);
 }
 

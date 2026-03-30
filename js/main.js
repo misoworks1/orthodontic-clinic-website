@@ -39,7 +39,6 @@ document.addEventListener('DOMContentLoaded', function () {
   // ==================== HEADER SCROLL ====================
   const header = document.getElementById('header');
   const quickMenuDesktop = document.getElementById('quick-menu-desktop');
-  let lastScrollY = 0;
 
   function onScroll() {
     const scrollY = window.scrollY;
@@ -60,7 +59,6 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
 
-    lastScrollY = scrollY;
   }
 
   window.addEventListener('scroll', onScroll, { passive: true });

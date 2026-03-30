@@ -10,34 +10,17 @@
   <meta property="og:type" content="website">
   <title>서울클리어교정치과 부산서면점 | 부산교정치과</title>
 
-  <!-- Pretendard Font -->
-  <link rel="stylesheet" crossorigin
-    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-
-  <!-- Swiper CSS -->
+  <link rel="stylesheet" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-
-  <!-- AOS CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
-
-  <!-- Material Icons -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
-
-  <!-- Custom CSS -->
   <link rel="stylesheet" href="css/style.css">
 
-  <!-- Schema.org -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Dentist",
     "name": "서울클리어교정치과 부산서면점",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "부산광역시 부산진구 서면로 00",
-      "addressLocality": "부산",
-      "addressCountry": "KR"
-    },
+    "address": { "@type": "PostalAddress", "streetAddress": "부산광역시 부산진구 서면로 00", "addressLocality": "부산", "addressCountry": "KR" },
     "telephone": "+82-51-000-0000",
     "openingHours": ["Mo-Fr 10:00-19:00", "Sa 10:00-14:00"],
     "medicalSpecialty": "Orthodontics"
@@ -46,7 +29,7 @@
 </head>
 <body>
 
-  <!-- ==================== POPUP ==================== -->
+  <!-- POPUP -->
   <div id="popup-overlay" class="popup-overlay">
     <div class="popup-container">
       <div class="popup-content">
@@ -66,16 +49,13 @@
         <button type="button" class="popup-cta" onclick="closePopup()">자세히 보기</button>
       </div>
       <div class="popup-footer">
-        <label>
-          <input type="checkbox" id="popup-today-close">
-          오늘 하루 보지 않기
-        </label>
+        <label><input type="checkbox" id="popup-today-close"> 오늘 하루 보지 않기</label>
         <button type="button" class="popup-close-btn" onclick="closePopup()">닫기</button>
       </div>
     </div>
   </div>
 
-  <!-- ==================== HEADER ==================== -->
+  <!-- HEADER -->
   <header id="header" class="header">
     <div class="header-inner">
       <a href="#" class="logo">
@@ -84,8 +64,8 @@
       </a>
       <nav class="nav-desktop" id="nav-desktop" aria-label="메인 네비게이션">
         <ul>
-          <li><a href="#about">병원소개</a></li>
           <li><a href="#doctor">의료진</a></li>
+          <li><a href="#about">병원소개</a></li>
           <li><a href="#treatment">진료안내</a></li>
           <li><a href="#cases">치료사례</a></li>
           <li><a href="#location">오시는길</a></li>
@@ -96,9 +76,7 @@
         상담예약
       </a>
       <button type="button" class="hamburger" id="hamburger" aria-label="메뉴 열기">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
       </button>
     </div>
   </header>
@@ -113,8 +91,8 @@
       </button>
     </div>
     <ul>
-      <li><a href="#about">병원소개</a></li>
       <li><a href="#doctor">의료진</a></li>
+      <li><a href="#about">병원소개</a></li>
       <li><a href="#treatment">진료안내</a></li>
       <li><a href="#cases">치료사례</a></li>
       <li><a href="#location">오시는길</a></li>
@@ -127,53 +105,29 @@
     </div>
   </nav>
 
-  <!-- ==================== HERO ==================== -->
+  <!-- HERO -->
   <section id="hero" class="hero-section">
     <div class="swiper hero-swiper">
       <div class="swiper-wrapper">
-        <!-- Slide 1 -->
-        <div class="swiper-slide hero-slide" style="background-color: #0a2e4d;">
+        <div class="swiper-slide hero-slide hero-slide-1">
           <div class="hero-content">
-            <p class="hero-badge" data-aos="fade-up">보건복지부 인증 교정과 전문의</p>
-            <h1 data-aos="fade-up" data-aos-delay="100">
-              정확한 진단,<br>
-              <span class="text-accent">섬세한 교정치료</span>
-            </h1>
-            <p class="hero-desc" data-aos="fade-up" data-aos-delay="200">
-              서울대 출신 교정과 전문의가<br>
-              처음부터 끝까지 직접 진료합니다
-            </p>
-            <a href="#doctor" class="hero-cta" data-aos="fade-up" data-aos-delay="300">의료진 소개</a>
+            <p class="hero-sub">보건복지부 인증 교정과 전문의</p>
+            <h1>정확한 진단,<br>섬세한 교정치료</h1>
+            <p class="hero-desc">서울대 출신 교정과 전문의가<br>처음부터 끝까지 직접 진료합니다</p>
+            <div class="hero-buttons">
+              <a href="#doctor" class="btn-primary">의료진 소개</a>
+              <a href="tel:051-000-0000" class="btn-outline">상담 예약</a>
+            </div>
           </div>
         </div>
-        <!-- Slide 2 -->
-        <div class="swiper-slide hero-slide" style="background-color: #083a50;">
+        <div class="swiper-slide hero-slide hero-slide-2">
           <div class="hero-content">
-            <p class="hero-badge" data-aos="fade-up">2026년 5월 GRAND OPEN</p>
-            <h1 data-aos="fade-up" data-aos-delay="100">
-              서울클리어교정치과<br>
-              <span class="text-accent">부산서면점</span>
-            </h1>
-            <p class="hero-desc" data-aos="fade-up" data-aos-delay="200">
-              개원 기념 교정 상담 무료<br>
-              정밀 검사비 50% 할인
-            </p>
-            <a href="tel:051-000-0000" class="hero-cta" data-aos="fade-up" data-aos-delay="300">상담 예약하기</a>
-          </div>
-        </div>
-        <!-- Slide 3 -->
-        <div class="swiper-slide hero-slide" style="background-color: #04364f;">
-          <div class="hero-content">
-            <p class="hero-badge" data-aos="fade-up">디지털 정밀 교정</p>
-            <h1 data-aos="fade-up" data-aos-delay="100">
-              3D 구강스캐너로<br>
-              <span class="text-accent">맞춤 교정 설계</span>
-            </h1>
-            <p class="hero-desc" data-aos="fade-up" data-aos-delay="200">
-              최신 디지털 장비로<br>
-              더 정확하고 빠른 교정치료
-            </p>
-            <a href="#treatment" class="hero-cta" data-aos="fade-up" data-aos-delay="300">진료 안내</a>
+            <p class="hero-sub">2026년 5월 GRAND OPEN</p>
+            <h1>서울클리어교정치과<br>부산서면점</h1>
+            <p class="hero-desc">개원 기념 교정 상담 무료<br>정밀 검사비 50% 할인</p>
+            <div class="hero-buttons">
+              <a href="tel:051-000-0000" class="btn-primary">상담 예약하기</a>
+            </div>
           </div>
         </div>
       </div>
@@ -183,402 +137,229 @@
 
   <main>
 
-    <!-- ==================== ABOUT ==================== -->
-    <section id="about" class="section about-section">
-      <div class="container">
-        <div class="section-header" data-aos="fade-up">
-          <p class="section-label">ABOUT</p>
-          <h2 class="section-title">서울클리어교정치과<br>부산서면점</h2>
-          <p class="section-desc">교정과 전문의가 운영하는 교정 전문 치과</p>
-        </div>
-
-        <div class="about-grid">
-          <div class="about-card" data-aos="fade-up" data-aos-delay="0">
-            <div class="about-icon">
-              <span class="material-symbols-outlined">verified</span>
-            </div>
-            <h3>교정과 전문의</h3>
-            <p>보건복지부 인증 교정과 전문의가<br>진료부터 관리까지 직접 담당합니다</p>
-          </div>
-          <div class="about-card" data-aos="fade-up" data-aos-delay="100">
-            <div class="about-icon">
-              <span class="material-symbols-outlined">precision_manufacturing</span>
-            </div>
-            <h3>디지털 정밀 진단</h3>
-            <p>3D 구강스캐너, CBCT 등<br>최신 디지털 장비로 정밀 진단</p>
-          </div>
-          <div class="about-card" data-aos="fade-up" data-aos-delay="200">
-            <div class="about-icon">
-              <span class="material-symbols-outlined">workspace_premium</span>
-            </div>
-            <h3>풍부한 임상 경험</h3>
-            <p>다양한 부정교합 증례에 대한<br>체계적인 치료 경험</p>
-          </div>
-          <div class="about-card" data-aos="fade-up" data-aos-delay="300">
-            <div class="about-icon">
-              <span class="material-symbols-outlined">groups</span>
-            </div>
-            <h3>1:1 맞춤 상담</h3>
-            <p>환자 개개인의 상태에 맞는<br>최적의 교정 계획을 수립합니다</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================== DOCTOR ==================== -->
+    <!-- DOCTOR : 좌측 텍스트 + 우측 사진 (서울클리어 패턴) -->
     <section id="doctor" class="section doctor-section">
-      <div class="container">
-        <div class="section-header" data-aos="fade-up">
-          <p class="section-label">DOCTOR</p>
-          <h2 class="section-title">의료진 소개</h2>
-        </div>
-
-        <div class="doctor-profile" data-aos="fade-up">
-          <div class="doctor-photo">
-            <!-- placeholder: 실제 원장님 사진으로 교체 -->
-            <div class="doctor-photo-placeholder">
-              <span class="material-symbols-outlined">person</span>
-              <p>원장 사진</p>
-            </div>
-          </div>
-          <div class="doctor-info">
-            <div class="doctor-name-area">
-              <p class="doctor-position">대표원장</p>
-              <h3 class="doctor-name">박주환 <span>원장</span></h3>
-              <div class="doctor-specialist-badge">
-                <svg class="mohw-mark" width="22" height="22" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="50" cy="50" r="48" stroke="#fff" stroke-width="4"/>
-                  <path d="M50 15C35 15 22 28 22 43c0 20 28 42 28 42s28-22 28-42c0-15-13-28-28-28z" fill="#fff"/>
-                  <circle cx="50" cy="42" r="14" fill="#4aacc6"/>
-                  <path d="M44 42l4 4 8-8" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                보건복지부 인증 교정과 전문의
-              </div>
+      <div class="container-wide">
+        <div class="split-layout">
+          <div class="split-text">
+            <p class="sub-title">대표원장</p>
+            <h2 class="big-name">박주환 <span>원장</span></h2>
+            <div class="specialist-badge">
+              <svg width="20" height="20" viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="46" stroke="#4aacc6" stroke-width="4"/><circle cx="50" cy="41" r="12" fill="#4aacc6"/><path d="M44 41l4 4 8-8" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              보건복지부 인증 교정과 전문의
             </div>
 
-            <div class="doctor-credentials">
-              <div class="credential-group">
+            <div class="credentials">
+              <div class="cred-block">
                 <h4>학력</h4>
                 <ul>
                   <li>서울대학교 치의학대학원 졸업</li>
                   <li>서울대학교 치과병원 교정과 수련</li>
                 </ul>
               </div>
-              <div class="credential-group">
+              <div class="cred-block">
                 <h4>경력</h4>
                 <ul>
                   <li>대한치과교정학회 정회원</li>
                   <li>인비절라인 공인 인증의</li>
-                  <li>前) 서울대학교 치과병원 교정과 진료의</li>
+                  <li>前 서울대학교 치과병원 교정과 진료의</li>
                   <li>서울클리어교정치과 네트워크</li>
                 </ul>
               </div>
-              <div class="credential-group">
-                <h4>자격 인증</h4>
-                <div class="credential-badges">
-                  <div class="badge-item mohw-badge-item">
-                    <svg class="mohw-badge-icon" width="36" height="36" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <circle cx="50" cy="50" r="46" stroke="#4aacc6" stroke-width="4"/>
-                      <path d="M50 18C36 18 25 29 25 43c0 18 25 38 25 38s25-20 25-38c0-14-11-25-25-25z" fill="#4aacc6" opacity="0.15"/>
-                      <path d="M50 18C36 18 25 29 25 43c0 18 25 38 25 38s25-20 25-38c0-14-11-25-25-25z" stroke="#4aacc6" stroke-width="3" fill="none"/>
-                      <circle cx="50" cy="41" r="12" fill="#4aacc6"/>
-                      <path d="M44 41l4 4 8-8" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    <span>보건복지부<br>인증</span>
-                  </div>
-                  <div class="badge-item">
-                    <span class="material-symbols-outlined">school</span>
-                    <span>서울대<br>출신</span>
-                  </div>
-                  <div class="badge-item">
-                    <span class="material-symbols-outlined">medical_services</span>
-                    <span>교정과<br>전문의</span>
-                  </div>
-                  <div class="badge-item">
-                    <span class="material-symbols-outlined">verified</span>
-                    <span>인비절라인<br>인증의</span>
-                  </div>
-                </div>
-              </div>
             </div>
 
-            <p class="doctor-message">
-              "환자분의 교합과 심미를 모두 고려한<br>
-              과학적이고 섬세한 교정치료를 약속드립니다."
-            </p>
+            <blockquote class="doctor-quote">
+              "환자분의 교합과 심미를 모두 고려한<br>과학적이고 섬세한 교정치료를 약속드립니다."
+            </blockquote>
+          </div>
+          <div class="split-image">
+            <div class="doctor-photo-placeholder">
+              <span class="material-symbols-outlined">person</span>
+              <p>원장 프로필 사진</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ==================== TREATMENT ==================== -->
+    <!-- ABOUT : 풀폭 배경 + 중앙 텍스트 + 아이콘 나열 (서울클리어 패턴) -->
+    <section id="about" class="section about-section">
+      <div class="container">
+        <h2 class="section-title-left">서울클리어교정치과가<br>특별한 이유</h2>
+        <div class="features-row">
+          <div class="feature-item">
+            <span class="feature-num">01</span>
+            <h3>교정과 전문의 직접 진료</h3>
+            <p>상담부터 마무리까지 교정과 전문의가 직접 진료합니다</p>
+          </div>
+          <div class="feature-item">
+            <span class="feature-num">02</span>
+            <h3>디지털 정밀 진단</h3>
+            <p>3D 구강스캐너, CBCT 등 최신 디지털 장비로 정확한 진단</p>
+          </div>
+          <div class="feature-item">
+            <span class="feature-num">03</span>
+            <h3>서울클리어 네트워크</h3>
+            <p>전국 서울클리어 네트워크의 축적된 교정 노하우</p>
+          </div>
+          <div class="feature-item">
+            <span class="feature-num">04</span>
+            <h3>1:1 맞춤 치료 계획</h3>
+            <p>환자 개개인의 교합 상태에 맞는 최적의 교정 설계</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TREATMENT : 이미지+텍스트 교차 배치 (서울클리어 패턴) -->
     <section id="treatment" class="section treatment-section">
       <div class="container">
-        <div class="section-header" data-aos="fade-up">
-          <p class="section-label">TREATMENT</p>
-          <h2 class="section-title">진료 안내</h2>
-          <p class="section-desc">환자의 상태에 맞는 최적의 교정 방법을 제안합니다</p>
-        </div>
+        <h2 class="section-title-center">진료 안내</h2>
 
-        <div class="treatment-grid">
-          <div class="treatment-card" data-aos="fade-up" data-aos-delay="0">
-            <div class="treatment-icon-wrap">
-              <span class="material-symbols-outlined">dentistry</span>
-            </div>
-            <h3>투명교정</h3>
-            <p class="treatment-subtitle">인비절라인</p>
-            <p>눈에 보이지 않는 투명 장치로<br>일상생활에 불편 없는 교정</p>
-            <ul class="treatment-features">
+        <div class="tx-item">
+          <div class="tx-image">
+            <div class="tx-image-placeholder">투명교정 이미지</div>
+          </div>
+          <div class="tx-text">
+            <h3>투명교정 <span>인비절라인</span></h3>
+            <p>눈에 보이지 않는 투명한 장치로 일상생활에 불편 없이 교정치료를 받을 수 있습니다. 탈착이 가능하여 식사와 양치가 자유롭습니다.</p>
+            <ul class="tx-points">
               <li>심미적 우수</li>
               <li>탈착 가능</li>
               <li>편안한 착용감</li>
             </ul>
           </div>
-          <div class="treatment-card" data-aos="fade-up" data-aos-delay="100">
-            <div class="treatment-icon-wrap">
-              <span class="material-symbols-outlined">diamond</span>
-            </div>
-            <h3>세라믹교정</h3>
-            <p class="treatment-subtitle">심미 브라켓</p>
-            <p>치아색과 유사한 세라믹 브라켓으로<br>자연스러운 교정 치료</p>
-            <ul class="treatment-features">
+        </div>
+
+        <div class="tx-item reverse">
+          <div class="tx-image">
+            <div class="tx-image-placeholder">세라믹교정 이미지</div>
+          </div>
+          <div class="tx-text">
+            <h3>세라믹교정 <span>심미 브라켓</span></h3>
+            <p>치아색과 유사한 세라믹 소재의 브라켓을 사용하여 자연스러운 외관을 유지하면서 정밀한 교정이 가능합니다.</p>
+            <ul class="tx-points">
               <li>자연스러운 색상</li>
-              <li>정밀한 조절</li>
+              <li>정밀한 치아 조절</li>
               <li>다양한 증례 적용</li>
             </ul>
           </div>
-          <div class="treatment-card" data-aos="fade-up" data-aos-delay="200">
-            <div class="treatment-icon-wrap">
-              <span class="material-symbols-outlined">visibility_off</span>
-            </div>
-            <h3>설측교정</h3>
-            <p class="treatment-subtitle">안쪽 교정</p>
-            <p>치아 안쪽에 장치를 부착하여<br>외부에서 전혀 보이지 않는 교정</p>
-            <ul class="treatment-features">
+        </div>
+
+        <div class="tx-item">
+          <div class="tx-image">
+            <div class="tx-image-placeholder">설측교정 이미지</div>
+          </div>
+          <div class="tx-text">
+            <h3>설측교정 <span>안쪽 교정</span></h3>
+            <p>치아 안쪽에 장치를 부착하여 외부에서 전혀 보이지 않습니다. 심미성을 중시하는 환자분께 적합합니다.</p>
+            <ul class="tx-points">
               <li>완벽한 심미성</li>
               <li>맞춤형 장치</li>
-              <li>정확한 치료</li>
-            </ul>
-          </div>
-          <div class="treatment-card" data-aos="fade-up" data-aos-delay="300">
-            <div class="treatment-icon-wrap">
-              <span class="material-symbols-outlined">child_care</span>
-            </div>
-            <h3>소아·청소년교정</h3>
-            <p class="treatment-subtitle">성장기 교정</p>
-            <p>성장기에 맞춘 적절한 시기의<br>교정으로 최적의 결과 도출</p>
-            <ul class="treatment-features">
-              <li>성장 조절</li>
-              <li>예방 교정</li>
-              <li>맞춤 치료 계획</li>
+              <li>정확한 치아 이동</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ==================== CASES ==================== -->
+    <!-- CASES : 스와이퍼 캐러셀 (서울클리어 패턴) -->
     <section id="cases" class="section cases-section">
       <div class="container">
-        <div class="section-header" data-aos="fade-up">
-          <p class="section-label">CASES</p>
-          <h2 class="section-title">치료 사례</h2>
-          <p class="section-desc">서울클리어교정치과의 교정 치료 결과입니다</p>
-        </div>
-
-        <!-- Filter Tabs -->
-        <div class="cases-filter" data-aos="fade-up">
-          <button type="button" class="filter-btn active" data-filter="all">전체</button>
-          <button type="button" class="filter-btn" data-filter="protrusion">돌출입</button>
-          <button type="button" class="filter-btn" data-filter="crowding">덧니</button>
-          <button type="button" class="filter-btn" data-filter="spacing">벌어진 치아</button>
-          <button type="button" class="filter-btn" data-filter="underbite">주걱턱</button>
-        </div>
-
-        <!-- Cases Grid -->
-        <div class="cases-grid" data-aos="fade-up">
-          <div class="case-card" data-category="protrusion">
-            <div class="case-images">
-              <div class="case-before">
-                <div class="case-placeholder">
-                  <span>Before</span>
-                </div>
-                <span class="case-label">Before</span>
-              </div>
-              <div class="case-after">
-                <div class="case-placeholder after">
-                  <span>After</span>
-                </div>
-                <span class="case-label">After</span>
-              </div>
-            </div>
-            <div class="case-info">
-              <span class="case-tag">돌출입</span>
-              <p>인비절라인 투명교정 | 18개월</p>
-            </div>
-          </div>
-
-          <div class="case-card" data-category="crowding">
-            <div class="case-images">
-              <div class="case-before">
-                <div class="case-placeholder">
-                  <span>Before</span>
-                </div>
-                <span class="case-label">Before</span>
-              </div>
-              <div class="case-after">
-                <div class="case-placeholder after">
-                  <span>After</span>
-                </div>
-                <span class="case-label">After</span>
-              </div>
-            </div>
-            <div class="case-info">
-              <span class="case-tag">덧니</span>
-              <p>세라믹교정 | 24개월</p>
-            </div>
-          </div>
-
-          <div class="case-card" data-category="spacing">
-            <div class="case-images">
-              <div class="case-before">
-                <div class="case-placeholder">
-                  <span>Before</span>
-                </div>
-                <span class="case-label">Before</span>
-              </div>
-              <div class="case-after">
-                <div class="case-placeholder after">
-                  <span>After</span>
-                </div>
-                <span class="case-label">After</span>
-              </div>
-            </div>
-            <div class="case-info">
-              <span class="case-tag">벌어진 치아</span>
-              <p>투명교정 | 12개월</p>
-            </div>
-          </div>
-
-          <div class="case-card" data-category="underbite">
-            <div class="case-images">
-              <div class="case-before">
-                <div class="case-placeholder">
-                  <span>Before</span>
-                </div>
-                <span class="case-label">Before</span>
-              </div>
-              <div class="case-after">
-                <div class="case-placeholder after">
-                  <span>After</span>
-                </div>
-                <span class="case-label">After</span>
-              </div>
-            </div>
-            <div class="case-info">
-              <span class="case-tag">주걱턱</span>
-              <p>세라믹교정 + 악교정 | 30개월</p>
-            </div>
-          </div>
-
-          <div class="case-card" data-category="protrusion">
-            <div class="case-images">
-              <div class="case-before">
-                <div class="case-placeholder">
-                  <span>Before</span>
-                </div>
-                <span class="case-label">Before</span>
-              </div>
-              <div class="case-after">
-                <div class="case-placeholder after">
-                  <span>After</span>
-                </div>
-                <span class="case-label">After</span>
-              </div>
-            </div>
-            <div class="case-info">
-              <span class="case-tag">돌출입</span>
-              <p>설측교정 | 20개월</p>
-            </div>
-          </div>
-
-          <div class="case-card" data-category="crowding">
-            <div class="case-images">
-              <div class="case-before">
-                <div class="case-placeholder">
-                  <span>Before</span>
-                </div>
-                <span class="case-label">Before</span>
-              </div>
-              <div class="case-after">
-                <div class="case-placeholder after">
-                  <span>After</span>
-                </div>
-                <span class="case-label">After</span>
-              </div>
-            </div>
-            <div class="case-info">
-              <span class="case-tag">덧니</span>
-              <p>인비절라인 | 16개월</p>
-            </div>
+        <div class="cases-header">
+          <h2 class="section-title-left">교정 치료 전·후</h2>
+          <div class="cases-nav">
+            <button type="button" class="cases-prev"><span class="material-symbols-outlined">chevron_left</span></button>
+            <button type="button" class="cases-next"><span class="material-symbols-outlined">chevron_right</span></button>
           </div>
         </div>
-
-        <p class="cases-notice">* 치료 결과는 개인에 따라 차이가 있을 수 있습니다</p>
       </div>
+      <div class="swiper cases-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide case-slide">
+            <div class="case-ba">
+              <div class="case-img-placeholder before">Before</div>
+              <div class="case-img-placeholder after">After</div>
+            </div>
+            <div class="case-desc">
+              <strong>돌출입</strong> · 인비절라인 투명교정 · 18개월
+            </div>
+          </div>
+          <div class="swiper-slide case-slide">
+            <div class="case-ba">
+              <div class="case-img-placeholder before">Before</div>
+              <div class="case-img-placeholder after">After</div>
+            </div>
+            <div class="case-desc">
+              <strong>덧니</strong> · 세라믹교정 · 24개월
+            </div>
+          </div>
+          <div class="swiper-slide case-slide">
+            <div class="case-ba">
+              <div class="case-img-placeholder before">Before</div>
+              <div class="case-img-placeholder after">After</div>
+            </div>
+            <div class="case-desc">
+              <strong>벌어진 치아</strong> · 투명교정 · 12개월
+            </div>
+          </div>
+          <div class="swiper-slide case-slide">
+            <div class="case-ba">
+              <div class="case-img-placeholder before">Before</div>
+              <div class="case-img-placeholder after">After</div>
+            </div>
+            <div class="case-desc">
+              <strong>주걱턱</strong> · 세라믹교정 · 30개월
+            </div>
+          </div>
+          <div class="swiper-slide case-slide">
+            <div class="case-ba">
+              <div class="case-img-placeholder before">Before</div>
+              <div class="case-img-placeholder after">After</div>
+            </div>
+            <div class="case-desc">
+              <strong>돌출입</strong> · 설측교정 · 20개월
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="cases-notice">* 치료 결과는 개인에 따라 차이가 있을 수 있습니다</p>
     </section>
 
-    <!-- ==================== LOCATION ==================== -->
+    <!-- LOCATION -->
     <section id="location" class="section location-section">
       <div class="container">
-        <div class="section-header" data-aos="fade-up">
-          <p class="section-label">LOCATION</p>
-          <h2 class="section-title">오시는 길</h2>
-        </div>
-
-        <div class="location-content" data-aos="fade-up">
+        <h2 class="section-title-center">오시는 길</h2>
+        <div class="location-grid">
           <div class="location-map">
-            <!-- 네이버 지도 placeholder -->
             <div class="map-placeholder">
               <span class="material-symbols-outlined">map</span>
-              <p>네이버 지도 영역<br><small>실제 배포 시 네이버 지도 API 연동</small></p>
+              <p>네이버 지도 영역</p>
             </div>
           </div>
           <div class="location-info">
-            <div class="info-item">
-              <span class="material-symbols-outlined">location_on</span>
-              <div>
-                <h4>주소</h4>
-                <p>부산광역시 부산진구 서면로 00<br>OO빌딩 3층</p>
-              </div>
+            <div class="loc-item">
+              <h4>주소</h4>
+              <p>부산광역시 부산진구 서면로 00<br>OO빌딩 3층</p>
             </div>
-            <div class="info-item">
-              <span class="material-symbols-outlined">call</span>
-              <div>
-                <h4>전화</h4>
-                <p><a href="tel:051-000-0000">051-000-0000</a></p>
-              </div>
+            <div class="loc-item">
+              <h4>전화</h4>
+              <p><a href="tel:051-000-0000">051-000-0000</a></p>
             </div>
-            <div class="info-item">
-              <span class="material-symbols-outlined">schedule</span>
-              <div>
-                <h4>진료시간</h4>
-                <table class="hours-table">
-                  <tbody>
-                    <tr><td>평일</td><td>10:00 ~ 19:00</td></tr>
-                    <tr><td>토요일</td><td>10:00 ~ 14:00</td></tr>
-                    <tr><td>점심시간</td><td>13:00 ~ 14:00</td></tr>
-                    <tr class="closed"><td>일·공휴일</td><td>휴진</td></tr>
-                  </tbody>
-                </table>
-              </div>
+            <div class="loc-item">
+              <h4>진료시간</h4>
+              <table class="hours-table">
+                <tbody>
+                  <tr><td>평일</td><td>10:00 ~ 19:00</td></tr>
+                  <tr><td>토요일</td><td>10:00 ~ 14:00</td></tr>
+                  <tr><td>점심시간</td><td>13:00 ~ 14:00</td></tr>
+                  <tr class="closed"><td>일·공휴일</td><td>휴진</td></tr>
+                </tbody>
+              </table>
             </div>
-            <div class="info-item">
-              <span class="material-symbols-outlined">directions_subway</span>
-              <div>
-                <h4>교통안내</h4>
-                <p>서면역 0번 출구에서 도보 3분</p>
-              </div>
+            <div class="loc-item">
+              <h4>교통안내</h4>
+              <p>서면역 0번 출구에서 도보 3분</p>
             </div>
           </div>
         </div>
@@ -587,7 +368,7 @@
 
   </main>
 
-  <!-- ==================== FOOTER ==================== -->
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
       <div class="footer-inner">
@@ -596,58 +377,35 @@
         </div>
         <div class="footer-info">
           <p>대표: 박주환 | 사업자등록번호: 000-00-00000</p>
-          <p>부산광역시 부산진구 서면로 00 OO빌딩 3층</p>
-          <p>Tel: 051-000-0000</p>
+          <p>부산광역시 부산진구 서면로 00 OO빌딩 3층 | Tel: 051-000-0000</p>
         </div>
-        <p class="footer-copy">&copy; 2026 서울클리어교정치과 부산서면점. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="#">카카오톡</a>
+          <a href="#">네이버예약</a>
+          <a href="#">블로그</a>
+        </div>
+        <p class="footer-copy">&copy; 2026 서울클리어교정치과 부산서면점</p>
       </div>
     </div>
   </footer>
 
-  <!-- ==================== QUICK MENU ==================== -->
-  <!-- Desktop: 우측 고정 -->
-  <div class="quick-menu-desktop" id="quick-menu-desktop">
-    <a href="tel:051-000-0000" class="qm-item qm-phone" aria-label="전화 상담">
-      <span class="material-symbols-outlined">call</span>
-      <span>전화상담</span>
-    </a>
-    <a href="#" class="qm-item qm-kakao" aria-label="카카오톡 상담">
-      <span class="qm-kakao-icon">K</span>
-      <span>카카오톡</span>
-    </a>
-    <a href="#" class="qm-item qm-naver" aria-label="네이버 예약">
-      <span class="qm-naver-icon">N</span>
-      <span>네이버예약</span>
-    </a>
-    <button type="button" class="qm-item qm-top" id="btn-top" aria-label="맨 위로">
-      <span class="material-symbols-outlined">arrow_upward</span>
-      <span>TOP</span>
-    </button>
+  <!-- QUICK MENU -->
+  <div class="quick-menu" id="quick-menu">
+    <a href="tel:051-000-0000" class="qm-btn qm-phone" aria-label="전화"><span class="material-symbols-outlined">call</span></a>
+    <a href="#" class="qm-btn qm-kakao" aria-label="카카오톡">K</a>
+    <a href="#" class="qm-btn qm-naver" aria-label="네이버예약">N</a>
+    <button type="button" class="qm-btn qm-top" id="btn-top" aria-label="맨 위로"><span class="material-symbols-outlined">arrow_upward</span></button>
   </div>
 
-  <!-- Mobile: 하단 바 -->
-  <div class="quick-menu-mobile" id="quick-menu-mobile">
-    <a href="tel:051-000-0000" class="qm-mob-item">
-      <span class="material-symbols-outlined">call</span>
-      <span>전화</span>
-    </a>
-    <a href="#" class="qm-mob-item">
-      <span class="qm-kakao-icon">K</span>
-      <span>카톡상담</span>
-    </a>
-    <a href="#" class="qm-mob-item">
-      <span class="qm-naver-icon">N</span>
-      <span>예약</span>
-    </a>
-    <a href="#location" class="qm-mob-item">
-      <span class="material-symbols-outlined">location_on</span>
-      <span>오시는길</span>
-    </a>
+  <!-- Mobile Bottom Bar -->
+  <div class="mobile-bar" id="mobile-bar">
+    <a href="tel:051-000-0000"><span class="material-symbols-outlined">call</span>전화</a>
+    <a href="#">K 카톡상담</a>
+    <a href="#">N 예약</a>
+    <a href="#location"><span class="material-symbols-outlined">location_on</span>오시는길</a>
   </div>
 
-  <!-- ==================== SCRIPTS ==================== -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

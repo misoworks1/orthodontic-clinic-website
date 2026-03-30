@@ -26,39 +26,34 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (popupOverlay) {
     checkPopup();
-    // 팝업 외부 클릭 시 닫기
     popupOverlay.addEventListener('click', function (e) {
       if (e.target === popupOverlay) closePopup();
     });
   }
 
-  // closePopup을 전역으로 노출 (onclick에서 사용)
   window.closePopup = closePopup;
 
 
   // ==================== HEADER SCROLL ====================
   const header = document.getElementById('header');
-  const quickMenuDesktop = document.getElementById('quick-menu-desktop');
+  const quickMenu = document.getElementById('quick-menu');
 
   function onScroll() {
     const scrollY = window.scrollY;
 
-    // 헤더 배경 변화
     if (scrollY > 60) {
       header.classList.add('scrolled');
     } else {
       header.classList.remove('scrolled');
     }
 
-    // 퀵메뉴 표시
-    if (quickMenuDesktop) {
+    if (quickMenu) {
       if (scrollY > 400) {
-        quickMenuDesktop.classList.add('visible');
+        quickMenu.classList.add('visible');
       } else {
-        quickMenuDesktop.classList.remove('visible');
+        quickMenu.classList.remove('visible');
       }
     }
-
   }
 
   window.addEventListener('scroll', onScroll, { passive: true });
@@ -87,7 +82,6 @@ document.addEventListener('DOMContentLoaded', function () {
   if (mobileNavClose) mobileNavClose.addEventListener('click', closeMobileNav);
   if (mobileNavOverlay) mobileNavOverlay.addEventListener('click', closeMobileNav);
 
-  // 모바일 메뉴 링크 클릭 시 닫기
   document.querySelectorAll('.mobile-nav a').forEach(function (link) {
     link.addEventListener('click', closeMobileNav);
   });
@@ -108,6 +102,17 @@ document.addEventListener('DOMContentLoaded', function () {
     pagination: {
       el: '.hero-pagination',
       clickable: true,
+    },
+  });
+
+
+  // ==================== CASES SWIPER ====================
+  new Swiper('.cases-swiper', {
+    slidesPerView: 'auto',
+    spaceBetween: 20,
+    navigation: {
+      prevEl: '.cases-prev',
+      nextEl: '.cases-next',
     },
   });
 
@@ -138,30 +143,6 @@ document.addEventListener('DOMContentLoaded', function () {
   window.addEventListener('scroll', updateActiveNav, { passive: true });
 
 
-  // ==================== CASES FILTER ====================
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const caseCards = document.querySelectorAll('.case-card');
-
-  filterBtns.forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      const filter = this.dataset.filter;
-
-      // 버튼 활성화
-      filterBtns.forEach(function (b) { b.classList.remove('active'); });
-      this.classList.add('active');
-
-      // 카드 필터링
-      caseCards.forEach(function (card) {
-        if (filter === 'all' || card.dataset.category === filter) {
-          card.classList.remove('hidden');
-        } else {
-          card.classList.add('hidden');
-        }
-      });
-    });
-  });
-
-
   // ==================== SCROLL TO TOP ====================
   const btnTop = document.getElementById('btn-top');
   if (btnTop) {
@@ -169,14 +150,5 @@ document.addEventListener('DOMContentLoaded', function () {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
-
-
-  // ==================== AOS INIT ====================
-  AOS.init({
-    duration: 700,
-    easing: 'ease-out-cubic',
-    once: true,
-    offset: 60,
-  });
 
 });

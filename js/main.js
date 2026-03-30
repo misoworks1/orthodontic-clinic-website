@@ -166,7 +166,22 @@ document.addEventListener('DOMContentLoaded', function () {
   window.addEventListener('scroll', updateActiveNav, { passive: true });
 
 
+  // ==================== SCROLL PROGRESS BAR ====================
+  var scrollProgress = document.getElementById('scroll-progress');
+
+  function updateScrollProgress() {
+    var scrollTop = window.scrollY;
+    var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    var percent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    scrollProgress.style.width = percent + '%';
+  }
+
+  window.addEventListener('scroll', updateScrollProgress, { passive: true });
+  updateScrollProgress();
+
+
   // ==================== SCROLL REVEAL ====================
+  var revealSelectors = '.reveal, .reveal-left, .reveal-right, .reveal-stagger';
   var revealObserver = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
       if (entry.isIntersecting) {
@@ -176,7 +191,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }, { threshold: 0.12, rootMargin: '0px 0px -32px 0px' });
 
-  document.querySelectorAll('.reveal').forEach(function (el) {
+  document.querySelectorAll(revealSelectors).forEach(function (el) {
     revealObserver.observe(el);
   });
 

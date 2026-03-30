@@ -30,11 +30,10 @@ document.addEventListener('DOMContentLoaded', function () {
       if (e.target === popupOverlay) closePopup();
     });
   }
-
   window.closePopup = closePopup;
 
 
-  // ==================== HEADER SCROLL (Headroom-style) ====================
+  // ==================== HEADER ====================
   var header = document.getElementById('header');
   var quickMenu = document.getElementById('quick-menu');
   var lastScrollY = 0;
@@ -43,14 +42,12 @@ document.addEventListener('DOMContentLoaded', function () {
   function onScroll() {
     var scrollY = window.scrollY;
 
-    // Header background
     if (scrollY > 60) {
       header.classList.add('scrolled');
     } else {
       header.classList.remove('scrolled');
     }
 
-    // Header hide/show on scroll direction
     if (scrollY > 300) {
       if (scrollY > lastScrollY + 5) {
         header.classList.add('header-hidden');
@@ -61,7 +58,6 @@ document.addEventListener('DOMContentLoaded', function () {
       header.classList.remove('header-hidden');
     }
 
-    // Quick menu visibility
     if (quickMenu) {
       if (scrollY > 400) {
         quickMenu.classList.add('visible');
@@ -75,12 +71,8 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   window.addEventListener('scroll', function () {
-    if (!ticking) {
-      requestAnimationFrame(onScroll);
-      ticking = true;
-    }
+    if (!ticking) { requestAnimationFrame(onScroll); ticking = true; }
   }, { passive: true });
-
   onScroll();
 
 
@@ -125,14 +117,30 @@ document.addEventListener('DOMContentLoaded', function () {
   // ==================== CASES SWIPER ====================
   new Swiper('.cases-swiper', {
     slidesPerView: 'auto',
-    spaceBetween: 20,
-    navigation: {
-      prevEl: '.cases-prev',
-      nextEl: '.cases-next',
-    },
-    breakpoints: {
-      768: { spaceBetween: 24 },
-    },
+    spaceBetween: 16,
+    navigation: { prevEl: '.cases-prev', nextEl: '.cases-next' },
+    breakpoints: { 768: { spaceBetween: 20 } },
+  });
+
+
+  // ==================== TREATMENT TABS ====================
+  var tabs = document.querySelectorAll('.tx-tab');
+  var panels = document.querySelectorAll('.tx-panel');
+
+  tabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      var target = this.dataset.tab;
+
+      tabs.forEach(function (t) { t.classList.remove('active'); });
+      this.classList.add('active');
+
+      panels.forEach(function (p) {
+        p.classList.remove('active');
+        if (p.id === 'panel-' + target) {
+          p.classList.add('active');
+        }
+      });
+    });
   });
 
 
@@ -149,9 +157,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (scrollY >= top && scrollY < top + height) {
         navLinks.forEach(function (link) {
           link.classList.remove('active');
-          if (link.getAttribute('href') === '#' + id) {
-            link.classList.add('active');
-          }
+          if (link.getAttribute('href') === '#' + id) link.classList.add('active');
         });
       }
     });
@@ -161,8 +167,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   // ==================== SCROLL REVEAL ====================
-  var revealElements = document.querySelectorAll('.reveal');
-
   var revealObserver = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
       if (entry.isIntersecting) {
@@ -170,57 +174,11 @@ document.addEventListener('DOMContentLoaded', function () {
         revealObserver.unobserve(entry.target);
       }
     });
-  }, {
-    threshold: 0.15,
-    rootMargin: '0px 0px -40px 0px',
-  });
+  }, { threshold: 0.12, rootMargin: '0px 0px -32px 0px' });
 
-  revealElements.forEach(function (el) {
+  document.querySelectorAll('.reveal').forEach(function (el) {
     revealObserver.observe(el);
   });
-
-
-  // ==================== STATS COUNTER ====================
-  var statNums = document.querySelectorAll('.stat-num[data-count]');
-  var statsObserved = false;
-
-  var statsObserver = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      if (entry.isIntersecting && !statsObserved) {
-        statsObserved = true;
-        animateCounters();
-        statsObserver.disconnect();
-      }
-    });
-  }, { threshold: 0.3 });
-
-  if (statNums.length > 0) {
-    statsObserver.observe(statNums[0].closest('.stats-section'));
-  }
-
-  function animateCounters() {
-    statNums.forEach(function (el) {
-      var target = parseInt(el.dataset.count, 10);
-      var duration = 1800;
-      var start = 0;
-      var startTime = null;
-
-      function step(timestamp) {
-        if (!startTime) startTime = timestamp;
-        var progress = Math.min((timestamp - startTime) / duration, 1);
-        var eased = 1 - Math.pow(1 - progress, 3);
-        var current = Math.floor(eased * target);
-        el.textContent = current.toLocaleString();
-        if (progress < 1) {
-          requestAnimationFrame(step);
-        } else {
-          el.textContent = target.toLocaleString();
-        }
-      }
-
-      requestAnimationFrame(step);
-    });
-  }
 
 
   // ==================== CV MODAL ====================
@@ -241,7 +199,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     modalClose.addEventListener('click', closeCvModal);
-
     cvModal.addEventListener('click', function (e) {
       if (e.target === cvModal) closeCvModal();
     });
@@ -263,17 +220,16 @@ document.addEventListener('DOMContentLoaded', function () {
         return;
       }
 
-      var submitBtn = contactForm.querySelector('.form-submit');
-      submitBtn.disabled = true;
-      submitBtn.textContent = '접수 중...';
+      var btn = contactForm.querySelector('.form-submit');
+      btn.disabled = true;
+      btn.textContent = '접수 중...';
 
-      // 실제 서버 연동 전 임시 처리
       setTimeout(function () {
         alert('상담 신청이 접수되었습니다.\n빠른 시간 내에 연락드리겠습니다.');
         contactForm.reset();
-        submitBtn.disabled = false;
-        submitBtn.textContent = '상담 신청하기';
-      }, 1000);
+        btn.disabled = false;
+        btn.textContent = '상담 신청';
+      }, 800);
     });
   }
 
